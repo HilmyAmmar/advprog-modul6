@@ -5,6 +5,7 @@ Pada method handle_connection, terdapat `BufReader` yang akan mengelilingi refer
 
 ## Commit 2 Reflection Notes
 ![Commit 2 screen capture](/assets/images/commit2.png)
+Tujuan utama dalam memperbarui method handle_connection adalah untuk mengimplemntasi fungsionalitas dalam menampilkan sesuatu dalam web browser, bukan hanya blank page saja. Sebelum mengupdate method handle_connection, kita terlebih dahulu membuat file html sebagai konten dari halaman di browser nantinya. Method ini akan memanfaatkan modul `fs` yang menyediakan fungsionalitas untuk bisa berinteraksi dengan sistem file. Selanjutnya, kita akan menggunakan `format!` untuk menambahkan konten file sebagai body dari respon yang sukses. Respon yang sukses dapat dilihat dari status_linenya, dimana pada kode ini statusnya adalah "HTTP/1.1 200 OK". Lalu, untuk memastikan respon HTTPnya valid, kita akan menambahkan `Content-Length` yang di-set sesuai ukuran dari file html. Dengan menjalankan `cargo run` dan menjalankan 127.0.0.1:7878 dalam browser, kita dapat melihat konten html pada page browser. Pada bagian ini, saya mempelajari bagaimana caranya dalam menampilkan konten html ke page browser saat program dijalankan
 
-## Commit 3
+## Commit 3 Reflection Notes
 ![Commit 3 screen capture](/assets/images/commit3.png)
