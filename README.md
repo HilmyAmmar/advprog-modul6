@@ -15,3 +15,7 @@ Pada bagian ini, kita akan membagi respon menjadi 2, yaitu respon sukses dan gag
 <br>
 Bisa dilihat bahwa program ini memanfaatkan if-else conditional dengan cara mengecek value dari `request_line`. Pengunaan if-else seperti ini dalam menghandle respon yang sukses dan respon yang gagal mempunyai beberapa repetisi/pengulangan. Kedua statement membaca file dan menulis konten file ke dalam `stream`. Untuk memperbaikinya, kita akan langsung memanfaatkan if-else conditional dalam men-assign value dari `status_line` dan `filename`. Dengan ini, *refactoring* yang dilakukan akan menghasilkan kode yang lebih bersih dan terhindar dari repetisi kode yang tidak perlu.
 
+## Commit 4 Reflection Notes
+Melalui kode `thread::sleep(Duration::from_secs(5))`, pengaksesan browser akan ditunda selama 5 detik. Lalu, jika kita mengakses 127.0.0.1/sleep dalam beberapa page browser sekaligus, bisa kita lihat bahwa lama waktu page browser untuk diakses bisa lebih dari 5 detik. Hal ini terjadi karena setiap *request* yang masuk ke endpoint tersebut akan memicu penundahaan ini. Jika ada banyak *request* yang masuk, *request* hanya akan ditangani secara bergantian atau satu per satu saja. Sebagai contoh, jika ada 5 *request* yang masuk secara bersamaan, durasi total untuk menyelesaikan semua permintaan menjadi sekitar 25 detik (5 * 5), meskipun tiap *request* hanya membutuhkan 5 detik saja. 
+
+## Commit 5 Reflection Notes
